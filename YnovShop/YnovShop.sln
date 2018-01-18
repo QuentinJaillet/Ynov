@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YnovShop", "YnovShop\YnovShop.csproj", "{CED0EB8B-08FE-490E-B67E-4F33D4392F3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YnovShop.Business", "YnovShop.Business\YnovShop.Business.csproj", "{627AC399-1408-4130-B364-E9E0CC3960AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YnovShop.Data", "YnovShop.Data\YnovShop.Data.csproj", "{261E868F-F156-456C-8179-BC52AE7EA544}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{CED0EB8B-08FE-490E-B67E-4F33D4392F3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CED0EB8B-08FE-490E-B67E-4F33D4392F3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CED0EB8B-08FE-490E-B67E-4F33D4392F3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627AC399-1408-4130-B364-E9E0CC3960AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627AC399-1408-4130-B364-E9E0CC3960AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627AC399-1408-4130-B364-E9E0CC3960AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627AC399-1408-4130-B364-E9E0CC3960AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{261E868F-F156-456C-8179-BC52AE7EA544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{261E868F-F156-456C-8179-BC52AE7EA544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{261E868F-F156-456C-8179-BC52AE7EA544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{261E868F-F156-456C-8179-BC52AE7EA544}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
