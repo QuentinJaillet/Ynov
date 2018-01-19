@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using YnovShop.Business;
+using YnovShop.Data;
+using YnovShop.Provider;
 
 namespace YnovShop
 {
@@ -21,6 +24,17 @@ namespace YnovShop
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Data
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IUserRepository, UserRepository>();
+
+            // Provider
+            services.AddTransient<ISaltProvider, SaltProvider>();
+            services.AddTransient<IPasswordProvider, PasswordProvider>();
+
+            // Service
+            services.AddTransient<IUserService, UserService>();
+
             services.AddMvc();
         }
 

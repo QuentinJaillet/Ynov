@@ -1,11 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using YnovShop.Business;
 using YnovShop.Models;
 
 namespace YnovShop.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly IUserService _userService;
+
+        public AccountController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
         // GET: Account
         public ActionResult Index()
         {
@@ -22,10 +30,17 @@ namespace YnovShop.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
-        {
+        { 
+            if (!ModelState.IsValid)
+                return View();
+
             try
             {
-                // TODO: Add insert logic here
+                _userService.CreateUser(
+                    model.Firstname,
+                    model.Lastname,
+                    model.Email,
+                    model.Password);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -33,6 +48,6 @@ namespace YnovShop.Controllers
             {
                 return View();
             }
-        }
+         }
     }
 }

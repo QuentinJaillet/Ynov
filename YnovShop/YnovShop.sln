@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YnovShop", "YnovShop\YnovShop.csproj", "{CED0EB8B-08FE-490E-B67E-4F33D4392F3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YnovShop", "YnovShop\YnovShop.csproj", "{CED0EB8B-08FE-490E-B67E-4F33D4392F3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YnovShop.Business", "YnovShop.Business\YnovShop.Business.csproj", "{627AC399-1408-4130-B364-E9E0CC3960AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YnovShop.Business", "YnovShop.Business\YnovShop.Business.csproj", "{627AC399-1408-4130-B364-E9E0CC3960AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YnovShop.Data", "YnovShop.Data\YnovShop.Data.csproj", "{261E868F-F156-456C-8179-BC52AE7EA544}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YnovShop.Data", "YnovShop.Data\YnovShop.Data.csproj", "{261E868F-F156-456C-8179-BC52AE7EA544}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YnovShop.Provider", "YnovShop.Provider\YnovShop.Provider.csproj", "{20A69697-7C4E-4822-AB9E-AE0D53EB630F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YnovShop.Provider", "YnovShop.Provider\YnovShop.Provider.csproj", "{20A69697-7C4E-4822-AB9E-AE0D53EB630F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YnovShop.Tests", "YnovShop.Tests\YnovShop.Tests.csproj", "{1BF03A99-9E36-4701-ADDB-6CDC66359CF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{20A69697-7C4E-4822-AB9E-AE0D53EB630F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20A69697-7C4E-4822-AB9E-AE0D53EB630F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20A69697-7C4E-4822-AB9E-AE0D53EB630F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BF03A99-9E36-4701-ADDB-6CDC66359CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BF03A99-9E36-4701-ADDB-6CDC66359CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BF03A99-9E36-4701-ADDB-6CDC66359CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BF03A99-9E36-4701-ADDB-6CDC66359CF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

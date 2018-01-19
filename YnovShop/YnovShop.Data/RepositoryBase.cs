@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace YnovShop.Data
 {
-    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class 
     {
         private readonly IUnitOfWork _unitOfWork;
 
