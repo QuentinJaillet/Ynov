@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\YnovShop.Provider\YnovShop.Provider.csproj" />
+    <ProjectReference Include="..\YnovShop\YnovShop.csproj" />
   </ItemGroup>
 
 </Project>

@@ -30,9 +30,9 @@ namespace YnovShop.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
-        { 
+        {
             if (!ModelState.IsValid)
-                return View();
+                return BadRequest(ModelState);
 
             try
             {
