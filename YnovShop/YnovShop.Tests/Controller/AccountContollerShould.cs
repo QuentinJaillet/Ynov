@@ -29,7 +29,7 @@ namespace YnovShop.Tests.Controller
         }
 
         [TestMethod]
-        public void Register_ReturnBadRequestIsModelInValid()
+        public void Register_ReturnBadRequestIsRegisterModelInValid()
         {
             // Arrange
             var model = new RegisterModel { Email = "fdsfsdfds" };
@@ -40,6 +40,8 @@ namespace YnovShop.Tests.Controller
             // Arrange
             Assert.IsNotNull(result);
         }
+
+
 
          
     }

@@ -15,6 +15,11 @@ namespace YnovTdd
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            if ((15 % 3) == 0)
+                Console.WriteLine("Hello World!");
+
+            Console.WriteLine("Hello World!");
         }
     }
 }
