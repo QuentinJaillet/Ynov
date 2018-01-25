@@ -38,6 +38,6 @@ namespace YnovShop.Tests.Controller
             Assert.IsNotNull(result);
         }
 
-
+         
     }
 }
