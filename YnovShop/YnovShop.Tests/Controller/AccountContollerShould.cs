@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Abstractions;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using YnovShop.Business;
@@ -22,17 +21,21 @@ namespace YnovShop.Tests.Controller
         {
             _userServiceMock = new Mock<IUserService>(MockBehavior.Strict);
 
+            var httpContext = new DefaultHttpContext();
+            var actionContext = new ActionContext(httpContext, new RouteData(), new ActionDescriptor());
+
             _controller = new AccountController(_userServiceMock.Object);
+            _controller.ModelState.AddModelError("SessionName", "Required");
         }
 
         [TestMethod]
         public void Register_ReturnBadRequestIsModelInValid()
         {
             // Arrange
-            var model = 
+            var model = new RegisterModel { Email = "fdsfsdfds" };
 
             // Act
-            var result = _controller.Register(new RegisterModel()) as BadRequestObjectResult;
+            var result = _controller.Register(model) as BadRequestObjectResult;
 
             // Arrange
             Assert.IsNotNull(result);
