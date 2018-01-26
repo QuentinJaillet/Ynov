@@ -6,6 +6,9 @@ namespace YnovShop.Data.Entities
 {
     public partial class YnovShopContext : DbContext
     {
+        public virtual DbSet<YCategory> YCategory { get; set; }
+        public virtual DbSet<YManufacturer> YManufacturer { get; set; }
+        public virtual DbSet<YProduct> YProduct { get; set; }
         public virtual DbSet<YUser> YUser { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -19,6 +22,61 @@ namespace YnovShop.Data.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<YCategory>(entity =>
+            {
+                entity.ToTable("y_category");
+
+                entity.Property(e => e.Description)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<YManufacturer>(entity =>
+            {
+                entity.ToTable("y_manufacturer");
+
+                entity.Property(e => e.Logo)
+                    .IsRequired()
+                    .HasColumnType("text");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<YProduct>(entity =>
+            {
+                entity.ToTable("y_product");
+
+                entity.Property(e => e.Description)
+                    .IsRequired()
+                    .HasColumnType("text");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.IdCategoryNavigation)
+                    .WithMany(p => p.YProduct)
+                    .HasForeignKey(d => d.IdCategory)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_PRODUCT_CATEGORY");
+
+                entity.HasOne(d => d.IdManufacturerNavigation)
+                    .WithMany(p => p.YProduct)
+                    .HasForeignKey(d => d.IdManufacturer)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_PRODUCT_MANUFACTURER");
+            });
+
             modelBuilder.Entity<YUser>(entity =>
             {
                 entity.ToTable("y_user");

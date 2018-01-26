@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Castle.Core.Logging;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using YnovShop.Business;
@@ -15,16 +17,18 @@ namespace YnovShop.Tests.Controller
     {
         private AccountController _controller;
         private Mock<IUserService> _userServiceMock;
+        private Mock<ILogger<AccountController>> _logger;
 
         [TestInitialize]
         public void Init()
         {
             _userServiceMock = new Mock<IUserService>(MockBehavior.Strict);
+            _logger = new Mock<ILogger<AccountController>>();
 
             var httpContext = new DefaultHttpContext();
             var actionContext = new ActionContext(httpContext, new RouteData(), new ActionDescriptor());
 
-            _controller = new AccountController(_userServiceMock.Object);
+            _controller = new AccountController(_logger.Object, _userServiceMock.Object);
             _controller.ModelState.AddModelError("SessionName", "Required");
         }
 
