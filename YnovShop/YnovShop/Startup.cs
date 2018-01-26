@@ -27,6 +27,9 @@ namespace YnovShop
             // Data
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IManufacturerRepository, ManufacturerRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
 
             // Provider
             services.AddTransient<ISaltProvider, SaltProvider>();
