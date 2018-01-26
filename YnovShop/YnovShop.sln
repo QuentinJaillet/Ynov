@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YnovShop.Provider", "YnovSh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YnovShop.Tests", "YnovShop.Tests\YnovShop.Tests.csproj", "{1BF03A99-9E36-4701-ADDB-6CDC66359CF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YnovShop.UITests", "YnovShop.UITests\YnovShop.UITests.csproj", "{E0F190CE-FFF6-4315-BF2B-A8D6C3401F65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YnovShop.UITests", "YnovShop.UITests\YnovShop.UITests.csproj", "{E0F190CE-FFF6-4315-BF2B-A8D6C3401F65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

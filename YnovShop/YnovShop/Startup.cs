@@ -37,6 +37,7 @@ namespace YnovShop
 
             // Service
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ICategoryService, CategoryService>();
 
             services.AddMvc();
         }
